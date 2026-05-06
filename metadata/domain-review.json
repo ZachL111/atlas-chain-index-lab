@@ -1,0 +1,73 @@
+{
+  "repo": "atlas-chain-index-lab",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "goal": "Implement a C blockchain tooling project for index format conversion, using round-trip fixtures and lossless normalization checks.",
+  "review_model": {
+    "terms": [
+      "event finality",
+      "nonce pressure",
+      "settlement risk",
+      "proof depth"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "event finality",
+      "signal": 43,
+      "slack": 37,
+      "drag": 30,
+      "confidence": 77,
+      "score": 110,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "nonce pressure",
+      "signal": 58,
+      "slack": 36,
+      "drag": 23,
+      "confidence": 53,
+      "score": 136,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "settlement risk",
+      "signal": 53,
+      "slack": 21,
+      "drag": 10,
+      "confidence": 47,
+      "score": 144,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "proof depth",
+      "signal": 70,
+      "slack": 46,
+      "drag": 14,
+      "confidence": 45,
+      "score": 189,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "event finality",
+      "signal": 70,
+      "slack": 26,
+      "drag": 28,
+      "confidence": 57,
+      "score": 139,
+      "lane": "watch"
+    }
+  ]
+}
